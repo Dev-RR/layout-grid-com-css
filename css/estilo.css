@@ -1,0 +1,189 @@
+body,
+p,
+h1,
+h2 {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.estrutura-superior {
+    display: grid;
+    grid-template-columns: 360px 360px 360px;
+    grid-template-areas:
+        "treino img-1 img-2"
+        "treino educacao img-3"
+        "img-4 read read";
+    gap: 30px;
+    max-width: 1237px;
+    margin: 0 auto;
+    padding: 30px;
+
+}
+
+.treino {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    background: #15C4CB;
+    grid-area: treino;
+    max-height: 625px;
+    color: white;
+}
+
+.treino h1 {
+    font-size: 48px;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.treino p {
+    font-size: 18px;
+
+
+}
+
+.img-1 {
+    grid-area: img-1;
+    background-image: url(../img/01.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 360px;
+    height: 312px;
+
+}
+
+.img-2 {
+    background-image: url(../img/02.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    grid-area: img-2;
+    width: 360px;
+    height: 312px;
+
+}
+
+.educacao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-area: educacao;
+    width: 360px;
+    height: 279px;
+    border: 2px solid #0CC2CA;
+
+}
+
+.educacao h2 {
+    width: 160px;
+    color: #0CC2CA;
+    text-align: center;
+    font-size: 25px;
+    line-height: 1.5;
+}
+
+.img-3 {
+    grid-area: img-3;
+    width: 360px;
+    height: 279px;
+    background-image: url(../img/03.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.img-4 {
+    grid-area: img-4;
+    width: 360px;
+    height: 312px;
+    background-image: url(../img/04.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.read {
+    grid-area: read;
+    background: #F86942;
+    color: white;
+    padding: 30px;
+}
+
+.read h2 {
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.read p {
+    margin-right: 25px;
+    font-size: px;
+    margin-bottom: 30px;
+}
+
+.read a {
+    padding: 10px 29px;
+    background: #FFFFFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    font-size: 12px;
+
+}
+
+@media (max-width: 810px) {
+    .estrutura-superior {
+        grid-template-columns: 360px, 360px;
+        grid-template-areas: "treino treino"
+            "img-1 img-2"
+            "educacao img-3"
+            "img-4 read"
+        ;
+
+        margin: 0 auto;
+    }
+
+    .read p {
+        font-size: 15px;
+    }
+}
+
+@media(max-width: 390px) {
+    .estrutura-superior {
+        grid-template-columns: minmax(300px, 390px);
+        grid-template-areas:
+            "treino"
+            "img-1"
+            "img-2"
+            "educacao"
+            "img-3"
+            "img-4"
+            "read"
+        ;
+        gap: 10px;
+        padding: 0;
+    }
+
+    .img-1,
+    .img-2,
+    .img-3,
+    .img-4,
+    .educacao {
+        width: 100%;
+    }
+
+    .educacao {
+        border: none;
+    }
+}
